@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    
+  <h3>Welcome to {{title}} Operation</h3>
+  <hr/>
+  <div class="col-lg-6">
+     <form>
+       <table class="table table-bordered">
+         <tr><th colspan="2">Person Sign Up Form</th></tr>
+         <tr>
+           <td>Name</td>
+           <td><input type="text" [(ngModel)]="Person.Name" name="Person.Name" value="" class="form-control" /></td>
+         </tr>
+         <tr>
+          <td>Email</td>
+          <td><input type="email" [(ngModel)]="Person.Email" name="Person.Email" value="" class="form-control" /></td>
+        </tr>
+        <tr>
+          <td>Mobile</td>
+          <td><input type="number" [(ngModel)]="Person.Mobile" name="Person.Mobile" value="" class="form-control" /></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><button class="btn btn-primary" (click)="SaveRecord()">Save</button></td>
+        </tr>
+       </table>
+     </form>
+
+  </div>
+
+  <div class="col-lg-6">
+    <table class="table table-bordered">
+      <tr><th colspan="6">Show Person Details</th></tr>
+      <tr><th>Sr.No</th><th>Name</th>
+        <th>Email</th><th>Mobile</th>
+      <th>Edit</th><th>Delete</th></tr>
+      <tr *ngFor="let item of PersonList; let i = index">
+        <td>{{i}}</td>
+        <td>{{item.Name}}</td>
+        <td>{{item.Email}}</td>
+        <td>{{item.Mobile}}</td>
+        <td><button class="btn btn-info" (click)="EditRecord(i)">Edit</button></td>
+        <td><button class="btn btn-danger" (click)="DeleteRecord(i)">Delete</button></td>
+      </tr>
+
+    </table>
+  </div>
+
+
+
+</div>
+</div>
